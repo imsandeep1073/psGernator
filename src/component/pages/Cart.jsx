@@ -6,19 +6,19 @@ function Cart() {
     const fatchApi = async () => {
         let a = await fetch("https://jsonplaceholder.typicode.com/posts")
         let data = await a.json();
-        setCardData(data);
-        console.log(data)
+        setCardData(data)
+        // console.log(data)
     }
 
     useEffect(() => {
         fatchApi()
     }, [])
 
-  
+
 
     return (
-        <div className='flex flex-wrap justify-center gap-4 p-3'>
-            {cardData.map((item) => {
+        <div className='flex flex-wrap justify-center gap-4 p-3 mt-5'>
+            {cardData.slice(0, 5).map((item) => {
                 return (
                     <div key={item.id} className="max-w-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
@@ -38,7 +38,6 @@ function Cart() {
                             </a>
                         </div>
                     </div>
-
                 )
             })}
         </div>
