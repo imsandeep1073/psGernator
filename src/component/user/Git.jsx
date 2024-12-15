@@ -3,31 +3,30 @@ import React, { useState, useEffect } from 'react'
 
 
 const Git = () => {
-    const { data, setDataval } = useState([])
-
-    // useEffect(() => {
-    //      fetch('https://api.github.com/users/imsandeep1073')
-    //     .then((response)=> response.json())
-    //     .then(data=>{
-    //         console.log(data)
-    //         setData(data)
-    //     })
-    // },[])
-    const fatchApi = async () => {
-        let a = await fetch("https://api.github.com/users/imsandeep1073")
-        let data = await a.json();
-        console.log(data)
-        setDataval(data);
-    }
+    const [data, setDataval] = useState([])
 
     useEffect(() => {
-        fatchApi()
+        fetch('https://api.github.com/users/imsandeep1073')
+            .then((response) => response.json())
+            .then(data => {
+                console.log(data)
+                setDataval(data)
+            })
     }, [])
 
-    // console.log(userData)
+    console.log(data)
+
 
     return (
-        <div>Github id : {data?.followers}</div>
+        <div className='justify-around grid grid-flow-col gap-4'>
+            <div className=''>
+                <img src={data?.avatar_url} alt="" />
+            </div>
+            <div>
+                <h1>{data.name}</h1>
+                <p>{data.login}</p>
+            </div>
+        </div>
     )
 }
 
