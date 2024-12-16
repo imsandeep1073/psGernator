@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
     return (
@@ -18,22 +18,39 @@ const Header = () => {
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <Link to={"home"} className="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 dark:text-white " aria-current="page">Home</Link>
+                            <NavLink to={"/home"} className={(e) => {
+                                return e.isActive ?
+                                    "border-b-2 border-white  block py-2 px-3 text-white focus:text-white  text-lg  font-bold focus:no-underline " : "block py-2 px-3 text-white  text-lg "
+                            }} aria-current="page">Home</NavLink>
                         </li>
                         <li>
-                            <Link to={"cart"} className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Cart</Link>
+                            <NavLink to={"/cart"} className={(e) => {
+                                return e.isActive ?
+                                    "border-b-2 border-white  block py-2 px-3 text-white focus:text-white  text-lg  font-bold focus:no-underline" : "block py-2 px-3 text-white  text-lg "
+                            }}>Cart</NavLink>
                         </li>
                         <li>
-                            <Link to={"blog"} className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</Link>
+                            <NavLink to={"/blog"} className={(e) => {
+                                return e.isActive ?
+                                    "border-b-2 border-white  block py-2 px-3 text-white focus:text-white  text-lg  font-bold focus:no-underline" : "block py-2 px-3 text-white  text-lg "
+                            }}>Blog</NavLink>
                         </li>
                         <li>
-                            <Link to={"password"} className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Password</Link>
+                            <NavLink to={"/password"} className={(e) => {
+                                return e.isActive ?
+                                    "border-b-2 border-white  block py-2 px-3 text-white focus:text-white  text-lg  font-bold focus:no-underline" : "block py-2 px-3 text-white  text-lg "
+                            }}>Password</NavLink>
                         </li>
                         <li>
-                            <Link to={"user"} className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">User</Link>
+                            <NavLink to={"/user"} className={(e) => {
+                                return e.isActive ?
+                                    "border-b-2 border-white  block py-2 px-3 text-white focus:text-white  text-lg  font-bold focus:no-underline" : "block py-2 px-3 text-white  text-lg "
+                            }}>User</NavLink>
                         </li>
                         <li>
-                            <Link to={"github"} className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Github</Link>
+                            <NavLink to={"/github"} className={(e) => {
+                                return e.isActive ? "border-b-2 border-white  block py-2 px-3 text-white focus:text-white  text-lg  font-bold focus:no-underline" : "block py-2 px-3 text-white  text-lg "
+                            }}>Github</NavLink>
                         </li>
 
                     </ul>
